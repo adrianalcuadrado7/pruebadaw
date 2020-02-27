@@ -1,0 +1,44 @@
+11-11-2019
+Vamos a hacer un Servlet, tenemos que añadirlos siempre al web.xml.
+Para poder hacer conexion a bases de datos primero debemos añadir la libreria MySQL JDBC Driver.
+Al llamar metodos tengo que pasar la variable conexion, debido a que la capa DAO no tiene la conexion.
+Glassfish web xml y le tenemos que poner un parameter encoding utf-8.
+12-11-2019
+Creamos el fichero glassfish-web.xml.
+No poner atributos en mayuscula el profesor te pega.
+No podemos interrogar a la variable conexion directamente primero debo hacer un Stament y sobre ese si se puede hacer el SQL. Pag 8 JDBC.
+ExecuteUpdate para update,insert,delete y ExecuteQuery para select, en este caso lleva un objeto ResultSet.
+Cuando modifiquemos el escrutinio debemos rehacer la sesion.
+18-11-2019
+Poner la cabezera en todas las vistas.
+Si ponemos una fecha en String nos suspende el curso y despues nos descuartiza.
+19-11-2019
+He hecho la base de datos.
+Poner _ a las variables que pasan como parametros
+25-11-2019
+Probar si podemos exportar e importar sin problemas con la encriptacion aes_encript.
+Hacer la ApplicationErrorException.
+ResultSet apunta al buffer de datos y con rs.next() sacamos una fila.
+HTTPSession session= request.getSession(true); si queremos hacer un setAttribute al session para pasar datos.
+ArrayList<Votante> ListadoCenso= (ArrayList)session.getAttribute("ListadoCenso"); para recoger la session en la vista.
+Llamar session a las sesiones y tener solo una variable session. Si lo llamamos session no tenemos que crear en las vistas nuevas httpsession.
+(ListadoCenso.get(i)).getXXXX(); 
+Hacer las cosas con foreach no con for en el caso de que no necesitemos controlar las posiciones. for(Electo ObjElecto:ArrayElecto){}
+03-12-2019
+Votos:
+PSOE: 27074.
+PP: 26588.
+VOX: 20478.
+UP: 10219.
+Cs: 8711.
+13-12-2019
+implements compare
+indexOf te obliga a implementar equals() y hash()
+17-12-2019
+synchronized hace que un metodo se bloquee para los demas hasta que termina el primero que lo llamó.
+Para uso del singleton (pero antes hacer una clase ConexionBBDD con lo que esta en los apuntes):
+private Connection Conexion;
+private ConexionBBDD ConexBD;
+--------(init)
+ConexBD= ConexionBBDD.getConexion();
+Conexion= ConexBD.getCon();
