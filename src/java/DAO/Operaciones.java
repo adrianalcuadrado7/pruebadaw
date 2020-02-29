@@ -308,4 +308,8 @@ public class Operaciones {
             throw new ApplicationErrorException(codigo,mensaje,lugar);
         }
     }
+    
+    public void WenoDia(){
+        System.out.println("Weno' dia' Españita");
+    }
 }
